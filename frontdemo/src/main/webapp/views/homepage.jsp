@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-        <h1>Welcome to HomePage</h1>
+	<a href="${pageContext.request.contextPath}/addprodpage">Click Here for Add Products Page</a>
 </body>
 </html>

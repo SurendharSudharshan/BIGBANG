@@ -3,6 +3,7 @@
 	<name>frontdemo</name>
 	<comment></comment>
 	<projects>
+		<project>backdemo</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
