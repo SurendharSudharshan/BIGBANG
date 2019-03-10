@@ -36,7 +36,7 @@
     </nav> -->
     
  <nav class="navbar navbar-expand-lg navbar-light navbar fixed-top justify-content-between" style="background-color:#25335e;">
-  <a class="navbar-brand" href="${contextRoot}/homepage">Online Shopping</a>
+  <a class="navbar-brand" href="${contextRoot}/homepage"><h4><b>Online Shopping</b></h4></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

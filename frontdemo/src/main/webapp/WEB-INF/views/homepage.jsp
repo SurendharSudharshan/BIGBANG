@@ -4,12 +4,7 @@
 
         <div class="col-md-3">
 
-          <h1 class="my-4">BIGBANG</h1>
-          <div class="list-group">
-            <a href="#" class="list-group-item">Smart phones</a>
-            <a href="#" class="list-group-item">Kid's Wear</a>
-            <a href="#" class="list-group-item">Men's Wear</a>
-          </div>
+          <%@include file="./shared/sidebar.jsp" %>
 
         </div>
         
