@@ -11,8 +11,14 @@ $(function() {
     $('#contact').addClass('active');
 	break;
 	
+	case 'All Products':
+		
+    $('#listProducts').addClass('active');
+    break;
+	
 	default:
-     $('#homepage').addClass('active');
+     $('#listProducts').addClass('active');
+	 $('#a_'+menu).addClass('active');
 	break;
 	
 	

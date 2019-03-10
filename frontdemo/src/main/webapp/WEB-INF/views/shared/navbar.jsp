@@ -45,11 +45,13 @@
       <li id="about">
         <a class="nav-link" href="${contextRoot}/about"> <h5 class="text-white">About Us</h5></a>
       </li>
-      <li id="listProducts">
-        <a class="nav-link" href="${contextRoot}/listProducts"> <h5 class="text-white">View Products</h5></a>
-      </li>
+      
       <li id="contact">
         <a class="nav-link" href="${contextRoot}/contact"> <h5 class="text-white">Contact Us</h5></a>
+      </li>
+      
+      <li id="listProducts">
+        <a class="nav-link" href="${contextRoot}/show/all/products"> <h5 class="text-white">View Products</h5></a>
       </li>
     <!--   <li class="nav-item">
         <a class="nav-link disabled" href="#"> <h5 class="text-white">Home</h5></a>

@@ -49,6 +49,19 @@ public class CategoryDaoImpl implements CategoryDao {
 		
 		return categories;
 	}
+
+
+
+	@Override
+	public Category get(int id) {
+		// TODO Auto-generated method stub
+		
+		for(Category category: categories)
+		{
+			if(category.getId()==id) return category;
+		}
+		return null;
+	}
 	
 	
 	
