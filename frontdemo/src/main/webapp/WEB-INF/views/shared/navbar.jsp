@@ -35,27 +35,28 @@
       </div>
     </nav> -->
     
- <nav class="navbar navbar-expand-lg navbar-light navbar fixed-top justify-content-between" style="background-color:#25335e;">
+ <nav class="navbar navbar-expand-lg navbar-light navbar fixed-top justify-content-between" id="nav" style="background-color:#25335e;">
   <a class="navbar-brand" href="${contextRoot}/homepage"><h4><b>Online Shopping</b></h4></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav mr-auto">
-      <li id="about">
+    <ul class="navbar-nav nav-pills">
+      <li id="about" class="nav-item">
         <a class="nav-link" href="${contextRoot}/about"> <h5 class="text-white">About Us</h5></a>
       </li>
       
-      <li id="contact">
-        <a class="nav-link" href="${contextRoot}/contact"> <h5 class="text-white">Contact Us</h5></a>
+      <li id="contact" class="nav-item">
+        <a class="nav-link " href="${contextRoot}/contact"> <h5 class="text-white">Contact Us</h5></a>
       </li>
       
-      <li id="listProducts">
-        <a class="nav-link" href="${contextRoot}/show/all/products"> <h5 class="text-white">View Products</h5></a>
+      <li id="listProducts" class="nav-item">
+        <a class="nav-link " href="${contextRoot}/show/all/products"> <h5 class="text-white">View Products</h5></a>
       </li>
     <!--   <li class="nav-item">
         <a class="nav-link disabled" href="#"> <h5 class="text-white">Home</h5></a>
       </li>-->
     </ul>
   </div>
+ 
 </nav>
