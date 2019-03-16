@@ -30,7 +30,7 @@ $(function() {
 
 //jquery data table
 
-//var products=[
+var products=[
 	           ['1','ABC'],
 	           ['2','ABz'],
 	           ['3','AdC'],
@@ -42,11 +42,13 @@ $(function() {
 	           ];
 	
 	
- //var $table = $('#productListTable');
+ var $table = $('#productListTable');
  //execute below code only where we have table
  
- //if($table.length)
-// {
-	 
- //}
+ if($table.length)
+ {
+	 console.log('Inside the table');
+ }
+ 
+})
  
