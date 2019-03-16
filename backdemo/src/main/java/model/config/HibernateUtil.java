@@ -16,6 +16,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import model.entity.Category;
+import model.entity.Product;
 
 @Configuration
 @ComponentScan(basePackages={"com.Hibernate.backdemo.model.entity"})
@@ -56,6 +57,7 @@ public class HibernateUtil {
 		builder.addProperties(getHibernateProperties());
 		builder.scanPackages("com.Hibernate.backdemo.model.entity");
 		builder.addAnnotatedClass(Category.class);
+		builder.addAnnotatedClass(Product.class);
 		
 		return builder.buildSessionFactory();
 		

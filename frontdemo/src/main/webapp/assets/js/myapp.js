@@ -25,4 +25,28 @@ $(function() {
 	
 	}
 	
-});
+
+
+
+//jquery data table
+
+//var products=[
+	           ['1','ABC'],
+	           ['2','ABz'],
+	           ['3','AdC'],
+	           ['4','AeC'],
+	           ['5','AfC'],
+	           ['6','AgC'],
+	           ['7','AvC'],
+	           ['8','AmC']
+	           ];
+	
+	
+ //var $table = $('#productListTable');
+ //execute below code only where we have table
+ 
+ //if($table.length)
+// {
+	 
+ //}
+ 

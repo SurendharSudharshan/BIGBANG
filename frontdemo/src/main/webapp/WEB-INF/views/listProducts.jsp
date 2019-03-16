@@ -14,14 +14,18 @@
 
 
 			<div class="row">
+			
+			
+			
+			</div>
 
 				<div class="col-lg-12">
 					<c:if test="${UserClickAllProducts==true}">
 						<ol class="breadcrumb">
 
-							<li><a href="${contextRoot}/homepage">Home</a></li>
+							<li class="breadcrumb-item"><a href="${contextRoot}/homepage">Home</a></li>
 
-							<li class="active">All Products</li>
+							<li class=" breadcrumb-item active">All Products</li>
 
 
 
@@ -34,10 +38,10 @@
 					<c:if test="${UserClickCategoryProducts==true}">
 						<ol class="breadcrumb">
 
-							<li><a href="${contextRoot}/homepage">Home</a></li>
+							<li class="breadcrumb-item"><a href="${contextRoot}/homepage">Home</a></li>
 
-							<li class="active">Category</li>
-							<li class="active">${category.name}</li>
+							<li class="breadcrumb-item">Category</li>
+							<li class="breadcrumb-item active">${category.name}</li>
 
 
 
@@ -61,6 +65,38 @@
 
 
 
+	
+	         <div class="row">
+	              <div class="col-xs-12">
+	              
+	              <table id="productListTable" class="table table-striped table-borderd">
+	              
+	              
+	                 <thead>
+	                 
+	                 <tr>
+	                   <th>ID</th>
+	                   <th>Name</th>
+	                 
+	                 
+	                 </tr>
+	                 
+	                 
+	                 
+	                 </thead>
+	              
+	              </table>
+	              
+	              
+	              
+	              </div>
+	              
+	         
+	         
+	         </div>
+	
+	
+	
 	</div>
 
 
