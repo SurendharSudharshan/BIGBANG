@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
- 
+	pageEncoding="ISO-8859-1"%>
+
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
@@ -13,67 +13,102 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <title>Online Shopping - ${title}</title>
-    <script>
-         window.menu ='${title}';
-    </script>
+<title>Online Shopping - ${title}</title>
+<script>
+	window.menu = '${title}';
+	window.contextRoot = '${contextRoot}';
+</script>
+<link href="${css}/myapp.css" rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-   <!--   <link href="${css}/bootstrap.min.css" rel="stylesheet">-->
 
-    <!-- Custom styles for this template -->
-    <link href="${css}/myapp.css" rel="stylesheet">
-   
-  
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<!-- Bootstrap core CSS -->
+<!--   <link href="${css}/bootstrap.min.css" rel="stylesheet">-->
 
-  </head>
+<!-- Custom styles for this template -->
+<%-- <link href="${css}/jquery.dataTables.css" rel="stylesheet"> --%>
+<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
 
-  <body>
-     <div class="wrapper">
-    <!-- navigation -->
-    <%@include file="./shared/navbar.jsp" %>
-    <div class="content">
-    <!-- Page Content -->
-   <!-- loading the home content -->
-   <c:if test="${UserClickHome == true }">
-   <%@include file="homepage.jsp" %>
-   </c:if>
-   <!-- load only when user clicks about -->
-    <c:if test="${UserClickAbout == true }">
-   <%@include file="about.jsp" %>
-   </c:if>
-   <!-- loads only when user clicks contact -->
-    <c:if test="${UserClickContact == true }">
-   <%@include file="contact.jsp" %>
-   </c:if>
-   
-    <c:if test="${UserClickAllProducts == true or UserClickCategoryProducts==true }">
-   <%@include file="listProducts.jsp" %>
-   </c:if>
-   </div>
-    <!-- Footer comes here-->
-   
-     <%@include file="./shared/footer.jsp" %>
-    <!-- Bootstrap core JavaScript -->
-   <!--   <script src="${js}/jquery.js"></script>-->
-   <!-- <script src="${js}/bootstrap.min.js"></script>
+
+
+<%-- <link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<!--  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="${css}/buttons.dataTables.css">
+ --%>
+ 
+ <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script
+	src="//https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+ 
+ 
+ 
+ </head>
+
+<body>
+	<div class="wrapper">
+		<!-- navigation -->
+		<%@include file="./shared/navbar.jsp"%>
+		<div class="content">
+			<!-- Page Content -->
+			<!-- loading the home content -->
+			<c:if test="${UserClickHome == true }">
+				<%@include file="homepage.jsp"%>
+			</c:if>
+			<!-- load only when user clicks about -->
+			<c:if test="${UserClickAbout == true }">
+				<%@include file="about.jsp"%>
+			</c:if>
+			<!-- loads only when user clicks contact -->
+			<c:if test="${UserClickContact == true }">
+				<%@include file="contact.jsp"%>
+			</c:if>
+
+			<c:if
+				test="${UserClickAllProducts == true or UserClickCategoryProducts==true }">
+				<%@include file="listProducts.jsp"%>
+			</c:if>
+		</div>
+		<!-- Footer comes here-->
+
+		<%@include file="./shared/footer.jsp"%>
+		<!-- Bootstrap core JavaScript -->
+		<%-- <%-- <%-- <script src="${js}/jquery.js"></script>
+		<!-- <script src="${js}/bootstrap.min.js"></script>
     <!-- Self coded Js -->
-    <script src="${js}/jquery.dataTables.js"></script>
-    <script src="${js}/myapp.js"></script>
-    </div>
+		
+		<!--   <script src="${js}/dataTables.buttons.js"></script>-->--> --%>
+		<script src="${js}/dataTables.bootstrap4.js"></script>  
+		<script src="${js}/jquery.dataTables.js"></script>
+		<script src="${js}/myapp.js"></script>
 
-  </body>
+	</div>
+
+</body>
 
 </html>
