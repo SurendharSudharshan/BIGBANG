@@ -34,7 +34,9 @@
 
 <!-- Custom styles for this template -->
 <%-- <link href="${css}/jquery.dataTables.css" rel="stylesheet"> --%>
-<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
+<%-- <link href="${css}/dataTables.bootstrap4.css" rel="stylesheet"> --%>
+
+<%-- <link href="${css}/darklight.css" rel="stylesheet"> --%>
 
 
 
@@ -62,15 +64,14 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script
-	src="//https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
- 
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' >
  
  
  </head>
 
-<body>
+<body class="c-container / t--light">
 	<div class="wrapper">
 		<!-- navigation -->
 		<%@include file="./shared/navbar.jsp"%>
@@ -103,9 +104,17 @@
     <!-- Self coded Js -->
 		
 		<!--   <script src="${js}/dataTables.buttons.js"></script>-->--> --%>
-		<script src="${js}/dataTables.bootstrap4.js"></script>  
-		<script src="${js}/jquery.dataTables.js"></script>
+		
 		<script src="${js}/myapp.js"></script>
+		
+		<%--  <script src="${js}/dataTables.bootstrap4.js"></script>  
+		<script src="${js}/jquery.dataTables.js"></script> --%> 
+		<%-- <script src="${js}/theme.js"></script> --%>
+		
+		<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script
+	src="//https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+		
 
 	</div>
 

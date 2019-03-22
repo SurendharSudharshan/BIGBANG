@@ -10,6 +10,12 @@
    
 </div>
 
+<!-- <div class="col-lg-3">
+     <nav class="c-menu / t-menu">
+    <button class="o-menu__item / t-menu__item / js-change-theme">Change</button>
+  </nav>
+</div>
+ -->   
 </div>
 </footer>
 

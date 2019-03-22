@@ -74,19 +74,21 @@
 
 
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col-lg-12 col-xs-12">
 
 					<table id="productListTable"
-						class="table table-striped table-bordered">
+						class="table table-bordered">
 
 
-						<thead>
+						<thead class="thead-dark">
 
 							<tr>
-								<th>Name</th>
-								<th>Brand</th>
-								<th>price</th>
-								<th>qty</th>
+							  <th scope="col"></th>
+								<th scope="col">Name</th>
+								<th scope="col">Brand</th>
+								<th scope="col">Price</th>
+								<th scope="col">Quantity</th>
+								<th scope="col"></th>
 
 
 
@@ -95,15 +97,7 @@
 
 
 						</thead>
-						<tfoot>
-							<tr>
-								<th>Name</th>
-								<th>Brand</th>
-								<th>Price</th>
-								<th>Qty</th>
-							</tr>
-						</tfoot>
-
+						
 					</table>
 
 

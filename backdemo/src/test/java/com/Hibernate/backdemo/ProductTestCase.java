@@ -32,37 +32,43 @@ public class ProductTestCase {
 	public void testCRUDProduct() {
 		
 		// create operation
-		product = new Product();
+	/*	product = new Product();
 				
-		product.setName("Oppo Selfie S53");
-		product.setBrand("Oppo");
-		product.setDescription("This is some description for oppo mobile phones!");
+		product.setName("MI LED 4A");
+		product.setBrand("Xiaomi");
+		product.setDescription("This is some description for Xiaomi television!");
 		product.setUnitPrice(25000);
 		product.setActive(true);
-		product.setCategoryId(3);
+		product.setCategoryId(2);
 		product.setSupplierId(3);
 		
 		assertEquals("Something went wrong while inserting a new product!",
 				true,ProductDAO.add(product));		
-		
+	*/
 		
 		// reading and updating the category
-		product = ProductDAO.get(2);
-		product.setName("Samsung Galaxy S7");
-		assertEquals("Something went wrong while updating the existing record!",
-				true,ProductDAO.update(product));		
-				
+	product = ProductDAO.get(5);
+	product.setCode("PRDABCXYZDEFM");
+	assertEquals("Something went wrong while updating the existing record!",
+			true,ProductDAO.update(product));		
+		/*product.setName("Acer Predator");
+		product.setUnitPrice(200000);
+		product.setDescription("some description for acer");
+		product.setBrand("Acer");
+		
+*/
+		/*product=ProductDAO.get(38);
 		assertEquals("Something went wrong while deleting the existing record!",
 				true,ProductDAO.delete(product));		
-		
-		// list
+		*/
+		/*// list
 		assertEquals("Something went wrong while fetching the list of products!",
 				6,ProductDAO.list().size());		
-				
+	*/			
 	}
 			
 	
-	@Test
+	/*@Test
 	public void testListActiveProducts() {
 		assertEquals("Something went wrong while fetching the list of products!",
 				5,ProductDAO.listActiveProducts().size());				
@@ -83,7 +89,7 @@ public class ProductTestCase {
 				3,ProductDAO.getLatestActiveProducts(3).size());
 		
 	} 
-	
+*/	
 	
 	
 		
