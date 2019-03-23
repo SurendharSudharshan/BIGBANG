@@ -22,6 +22,8 @@
 <meta name="author" content="">
 
 <title>Online Shopping - ${title}</title>
+
+
 <script>
 	window.menu = '${title}';
 	window.contextRoot = '${contextRoot}';
@@ -98,6 +100,11 @@
 			<c:if
 				test="${userClickShowProduct == true }">
 				<%@include file="singleProduct.jsp"%>
+			</c:if>
+			
+			<c:if
+				test="${userClickManageProducts == true }">
+				<%@include file="manageProducts.jsp"%>
 			</c:if>
 			
 		</div>

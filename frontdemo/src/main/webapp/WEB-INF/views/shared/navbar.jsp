@@ -53,6 +53,10 @@
       <li id="listProducts" class="nav-item">
         <a class="nav-link " href="${contextRoot}/show/all/products"> <h5 class="text-white">View Products</h5></a>
       </li>
+      
+        <li id="manageProducts" class="nav-item">
+        <a class="nav-link" href="${contextRoot}/manage/products"> <h5 class="text-white">Manage Products</h5></a>
+      </li>
     <!--   <li class="nav-item">
         <a class="nav-link disabled" href="#"> <h5 class="text-white">Home</h5></a>
       </li>-->

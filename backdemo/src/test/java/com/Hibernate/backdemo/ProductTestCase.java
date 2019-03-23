@@ -48,7 +48,7 @@ public class ProductTestCase {
 		
 		// reading and updating the category
 	product = ProductDAO.get(5);
-	product.setCode("PRDABCXYZDEFM");
+	product.setQuantity(0);
 	assertEquals("Something went wrong while updating the existing record!",
 			true,ProductDAO.update(product));		
 		/*product.setName("Acer Predator");

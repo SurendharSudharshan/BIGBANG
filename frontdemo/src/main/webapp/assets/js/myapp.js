@@ -3,16 +3,21 @@ $(function() {
 	switch (menu) {
 
 	case 'About Us':
-		$('#about').addClass('active');
+		$('.nav-item').addClass('active');
 		break;
 
 	case 'Contact Us':
-		$('#contact').addClass('active');
+		$('.nav-item').addClass('active');
 		break;
 
 	case 'All Products':
 
-		$('#listProducts').addClass('active');
+		$('.nav-item').addClass('active');
+		break;
+		
+	case 'Product Manager':
+
+		$('.nav-item').addClass('active');
 		break;
 
 	default:
