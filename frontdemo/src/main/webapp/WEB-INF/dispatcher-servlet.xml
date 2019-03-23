@@ -23,7 +23,9 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 		
+<context:component-scan	base-package="com.Hibernate.frontdemo" />
 <context:component-scan	base-package="controller" />
+
 <context:component-scan	base-package="model" />		
 <mvc:annotation-driven />
 <mvc:resources location="/assets/" mapping="/resources/**"></mvc:resources>

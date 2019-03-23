@@ -94,6 +94,12 @@
 				test="${UserClickAllProducts == true or UserClickCategoryProducts==true }">
 				<%@include file="listProducts.jsp"%>
 			</c:if>
+			
+			<c:if
+				test="${userClickShowProduct == true }">
+				<%@include file="singleProduct.jsp"%>
+			</c:if>
+			
 		</div>
 		<!-- Footer comes here-->
 

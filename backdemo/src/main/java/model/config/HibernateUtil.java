@@ -19,7 +19,7 @@ import model.entity.Category;
 import model.entity.Product;
 
 @Configuration
-@ComponentScan(basePackages={"com.Hibernate.backdemo.model.entity"})
+@ComponentScan(basePackages={"com.Hibernate.backdemo.model.entity,com.Hibernate.frontdemo.controller"})
 @EnableTransactionManagement
 public class HibernateUtil {
 
@@ -55,7 +55,7 @@ public class HibernateUtil {
 		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource);
 		
 		builder.addProperties(getHibernateProperties());
-		builder.scanPackages("com.Hibernate.backdemo.model.entity");
+		builder.scanPackages("com.Hibernate.backdemo");
 		builder.addAnnotatedClass(Category.class);
 		builder.addAnnotatedClass(Product.class);
 		

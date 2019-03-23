@@ -1,5 +1,7 @@
 package controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -8,17 +10,28 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import model.dao.CategoryDao;
+import model.dao.ProductDAO;
 import model.entity.Category;
+import model.entity.Product;
 
 @Controller
 public class PageController {
+	
+	private static final Logger logger=LoggerFactory.getLogger(PageController.class);
 	@Autowired
 	private CategoryDao categoryDao;
+	
+	@Autowired
+	private ProductDAO productDAO;
 	@RequestMapping(value = {"/", "/homepage", "/index"} )
 	public ModelAndView index()
 	{
 		ModelAndView mv = new ModelAndView("template");
 		mv.addObject("title", "Home");
+		
+		logger.info("Inside Page controller index method - info");
+		logger.debug("Inside Page controller index method - debug");
+		
 		mv.addObject("UserClickHome", true);
 		mv.addObject("categories",categoryDao.list());
 		return mv;
@@ -84,8 +97,26 @@ public class PageController {
 	}
 
 	
-	
-	
+	@RequestMapping(value="/show/{id}/product")
+	public ModelAndView showSingleProduct(@PathVariable int id) {
+		
+		ModelAndView mv=new ModelAndView("template");
+		Product product= productDAO.get(id);
+		product.setViews(product.getViews() + 1);
+		//update the view count
+		
+		productDAO.update(product);
+		
+		
+		mv.addObject("title",product.getName());
+		mv.addObject("product",product);
+		mv.addObject("userClickShowProduct",true);
+		
+		
+		
+		return mv;
+		
+	}
 	
 
 }
