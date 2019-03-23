@@ -157,4 +157,38 @@
 	    </div>
 	  </div>
 	</div>
- --%>	</div>
+ --%>
+ <br>
+ <br>
+ <h1>Available Products</h1>
+	<hr/>
+	
+	<div class="row">
+				
+		
+		<div class='col-xs-12'>
+		
+		
+			<table id="productsTable" class="table table-condensed table-bordered">
+							
+				<thead>					
+					<tr>					
+						<th>Id</th>
+						<th>&#160;</th>
+						<th>Name</th>
+						<th>Brand</th>
+						<th>Qty. Available</th>
+						<th>Unit Price</th>
+						<th>Activate</th>				
+						<th>Edit</th>
+					</tr>					
+				</thead>
+				
+				
+							
+			</table>
+	</div>
+	</div>
+ 
+ 
+ 	</div>

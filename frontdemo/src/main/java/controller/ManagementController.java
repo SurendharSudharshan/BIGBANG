@@ -2,16 +2,25 @@ package controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import model.dao.CategoryDao;
+import model.dao.ProductDAO;
 import model.entity.Category;
 import model.entity.Product;
+import util.FileUploadUtility;
+import validator.ProductValidator;
 
 @Controller
 @RequestMapping("/manage")
@@ -20,8 +29,11 @@ public class ManagementController {
 	@Autowired
 	private CategoryDao categoryDao;
 	
+	@Autowired
+	private ProductDAO productDAO;
+	
 	@RequestMapping(value="/products", method=RequestMethod.GET)
-	public ModelAndView showManageproducts() {
+	public ModelAndView showManageproducts(@RequestParam(name="success",required=false)String success) {
 		
 		ModelAndView mv=new ModelAndView("template");
 		
@@ -36,12 +48,14 @@ public class ManagementController {
 		nProduct.setActive(true);
 		mv.addObject("product", nProduct);
 		
+		if(success != null) {
+			if(success.equals("product")){
+				mv.addObject("message", "Product submitted successfully!");
 		
-		
-		
+			}}
 		return mv;
 		
-		
+				
 	}
 	
 	@ModelAttribute("categories")
@@ -50,6 +64,41 @@ public class ManagementController {
 	}
 	
 	
+	@RequestMapping(value = "/product", method=RequestMethod.POST)
+	public String managePostProduct(@Valid @ModelAttribute("product") Product mProduct, 
+			BindingResult results, Model model, HttpServletRequest request) {
+		
+		// mandatory file upload check
+		if(mProduct.getId() == 0) {
+			new ProductValidator().validate(mProduct, results);
+		}
+		else {
+			// edit check only when the file has been selected
+			if(!mProduct.getFile().getOriginalFilename().equals("")) {
+				new ProductValidator().validate(mProduct, results);
+			}			
+		}
+		
+		if(results.hasErrors()) {
+			model.addAttribute("message", "Validation fails for adding the product!");
+			model.addAttribute("userClickManageProducts",true);
+			return "template";
+		}			
+
+		
+		if(mProduct.getId() == 0 ) {
+			productDAO.add(mProduct);
+		}
+		else {
+			productDAO.update(mProduct);
+		}
 	
+		 //upload the file
+		 if(!mProduct.getFile().getOriginalFilename().equals("") ){
+			FileUploadUtility.uploadFile(request, mProduct.getFile(), mProduct.getCode()); 
+		 }
+		
+		return "redirect:/manage/products?success=product";
+	}
 
 }
