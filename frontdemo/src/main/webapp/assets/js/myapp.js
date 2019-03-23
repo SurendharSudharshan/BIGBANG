@@ -109,7 +109,7 @@ $(function() {
 											+ '/product" class="btn btn-primary"><i class="fas fa-eye"></i></a> &#160;';
 
 									if (row.quantity < 1) {
-										str += '<a href="javascript:void(0)" class="btn btn-success disabled"><i class="fas fa-cart-plus"></i></a>';
+										str += ' <a href="javascript:void(0)" class="btn btn-success disabled"><i class="fas fa-cart-plus"></i></a>';
 
 									} else {
 										str += '<a href="'
