@@ -2,13 +2,13 @@
 
 <div class="container">
 
-	<%-- <c:if test="${not empty message}">	
+	 <c:if test="${not empty message}">	
 		<div class="row">			
 			<div class="col-xs-12 col-md-offset-2 col-md-8">			
 				<div class="alert alert-info fade in">${message}</div>				
 			</div>
 		</div>
-	</c:if> --%>
+	</c:if> 
 
 	<div class="row">
 
@@ -119,7 +119,7 @@
 	</div>
 
 	<!-- Modal -->
-	<%-- <div class="modal fade" id="myCategoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	 <div class="modal fade" id="myCategoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -133,7 +133,7 @@
        			<div class="form-group">
 					<label class="control-label col-md-4">Name</label>
 					<div class="col-md-8 validate">
-						<sf:input type="text" path="name" class="form-control"
+						<sf:input type="text" path="name" id="category_name" class="form-control"
 							placeholder="Category Name" /> 
 					</div>
 				</div>
@@ -141,7 +141,7 @@
        			<div class="form-group">				
 					<label class="control-label col-md-4">Description</label>
 					<div class="col-md-8 validate">
-						<sf:textarea path="description" class="form-control"
+						<sf:textarea path="description" id="category_description" class="form-control"
 							placeholder="Enter category description here!" /> 
 					</div>
 				</div>	        	        
@@ -157,7 +157,7 @@
 	    </div>
 	  </div>
 	</div>
- --%>
+ 
  <br>
  <br>
  <h1>Available Products</h1>

@@ -10,9 +10,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import model.dao.CategoryDao;
@@ -52,10 +54,31 @@ public class ManagementController {
 			if(success.equals("product")){
 				mv.addObject("message", "Product submitted successfully!");
 		
-			}}
+			}
+			
+			else if (success.equals("category")) {
+				mv.addObject("message", "Category submitted successfully!");
+			}
+		
+		}
 		return mv;
 		
 				
+	}
+	
+	@RequestMapping("/{id}/product")
+	public ModelAndView manageProductEdit(@PathVariable int id) {		
+
+		ModelAndView mv = new ModelAndView("template");	
+		mv.addObject("title","Product Management");		
+		mv.addObject("userClickManageProduct",true);
+		
+		// Product nProduct = new Product();		
+		mv.addObject("product", productDAO.get(id));
+
+			
+		return mv;
+		
 	}
 	
 	@ModelAttribute("categories")
@@ -101,4 +124,34 @@ public class ManagementController {
 		return "redirect:/manage/products?success=product";
 	}
 
+	@RequestMapping(value = "/product/{id}/activation", method=RequestMethod.GET)
+	@ResponseBody
+	public String managePostProductActivation(@PathVariable int id) {		
+		Product product = productDAO.get(id);
+		boolean isActive = product.isActive();
+		product.setActive(!isActive);
+		productDAO.update(product);		
+		return (isActive)? "Product Deactivated Successfully!": "Product Activated Successfully";
+	}
+	
+	
+	@RequestMapping(value = "/category", method=RequestMethod.POST)
+	public String managePostCategory(@ModelAttribute("category") Category mCategory, HttpServletRequest request) {					
+		categoryDao.add(mCategory);		
+		return "redirect:" + request.getHeader("Referer") + "?success=category";
+	}
+			
+	
+	@ModelAttribute("categories") 
+	public List<Category> modelCategories() {
+		return categoryDao.list();
+	}
+	
+	@ModelAttribute("category")
+	public Category modelCategory() {
+		return new Category();
+	}
+	
+	
+	
 }
